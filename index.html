@@ -3,35 +3,50 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <title>ShowYouID by HansEngebretsen</title>
+    <meta name="viewport" content="width=640" />
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen"/>
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>ShowYouID - Batch Youtube Number finder by HansEngebretsen</title>
   </head>
 
   <body>
-    <div id="container">
-      <div class="inner">
+    <a id="forkme_banner" href="https://github.com/HansEngebretsen/ShowYouID">View on GitHub</a>
+    <div class="shell">
 
-        <header>
-          <h1>ShowYouID</h1>
-          <h2>Replaces the title of a YouTube Video with it&#39;s ID: Useful when viewing in batch.</h2>
-        </header>
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>ShowYouID - Batch Youtube Number finder</h1>
+            <h2>Replaces the title of a YouTube Video with it&#39;s ID: Useful when viewing in batch.</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
 
-        <section id="downloads" class="clearfix">
-          <a href="https://github.com/HansEngebretsen/ShowYouID/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
-          <a href="https://github.com/HansEngebretsen/ShowYouID/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
-          <a href="https://github.com/HansEngebretsen/ShowYouID" id="view-on-github" class="button"><span>View on GitHub</span></a>
-        </section>
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/HansEngebretsen/ShowYouID/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/HansEngebretsen/ShowYouID/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
 
-        <hr>
 
-        <section id="main_content">
-          <h1>
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <h1>
 <a name="show-youtube-ids-bookmarklet" class="anchor" href="#show-youtube-ids-bookmarklet"><span class="octicon octicon-link"></span></a>Show YouTube ID's Bookmarklet</h1>
 
 <blockquote>
@@ -41,20 +56,26 @@
 <h2>
 <a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
 
-<p>Click and drag the button below into your bookmarks bar. Then when you're on <a href="https://www.youtube.com/my_videos">the correct page</a>, click it and magic will ensue.</p>
+<p>Add a bookmark to your toolbar, for the url, copy and paste the below code. Then when you're on <a href="https://www.youtube.com/my_videos">the correct page</a>, click it and magic will ensue.</p>
 
-<a class="button" href="javascript:(function(e,a,g,h,f,c,b,d)%7Bif(!(f%3De.jQuery)%7C%7Cg&gt;f.fn.jquery%7C%7Ch(f))%7Bc%3Da.createElement("script")%3Bc.type%3D"text/javascript"%3Bc.src%3D"<a href="https://ajax.googleapis.com/ajax/libs/jquery/%22%2Bg%2B%22/jquery.min.js%22%3Bc.onload%3Dc.onreadystatechange%3Dfunction()%7Bif(!b%26%26(!(d%3Dthis.readyState)%7C%7Cd%3D%3D%22loaded%22%7C%7Cd%3D%3D%22complete%22))%7Bh((f%3De.jQuery).noConflict(1),b%3D1)%3Bf(c).remove()%7D%7D%3Ba.documentElement.childNodes%5B0%5D.appendChild(c)%7D%7D)(window,document,%222.1.0%22,function(%24,L)%7BswapTitle()%3Bfunction">https://ajax.googleapis.com/ajax/libs/jquery/"%2Bg%2B"/jquery.min.js"%3Bc.onload%3Dc.onreadystatechange%3Dfunction()%7Bif(!b%26%26(!(d%3Dthis.readyState)%7C%7Cd%3D%3D"loaded"%7C%7Cd%3D%3D"complete"))%7Bh((f%3De.jQuery).noConflict(1),b%3D1)%3Bf(c).remove()%7D%7D%3Ba.documentElement.childNodes%5B0%5D.appendChild(c)%7D%7D)(window,document,"2.1.0",function(%24,L)%7BswapTitle()%3Bfunction</a> swapTitle() %7Bvar LinksArray %3D %24(%27.vm-video-title-container%27).find(%27.vm-video-title-content.yt-uix-sessionlink%27)%3BLinksArray.each(function()%7Bvar YTnumber %3D %24(this).attr(%27href%27).replace(%27/watch%3Fv%3D%27, %27%27)%3B%24(this).html(%27Video ID%27 %2B %27: %27 %2B %27%27 %2B YTnumber %2B%27%27)%3B%7D)%7D%7D)%3B"></a>SHOW YOUTUBE IDs</a>
+<pre><code>javascript:(function(){if(window.jQuery===undefined||window.jQuery.fn.jquery&lt;v){var v="2.1.0";var done=false;var script=document.createElement("script");script.src="https://ajax.googleapis.com/ajax/libs/jquery/"+v+"/jquery.min.js";document.getElementsByTagName("head")[0].appendChild(script);script.onload=script.onreadystatechange=function(){if(!done&amp;&amp;(!this.readyState||this.readyState=="loaded"||this.readyState=="complete")){done=true;swapTitle()}}}else{swapTitle()}swapTitle();function swapTitle(){var LinksArray=$('.vm-video-title-container').find('.vm-video-title-content.yt-uix-sessionlink');LinksArray.each(function(){var YTnumber=$(this).attr('href').replace('/watch?v=','');$(this).html('Video ID'+': '+'&lt;span style=\"color:red; font-weight:bold\"\&gt;'+YTnumber+'&lt;/span&gt;')})()}})();
+</code></pre>
+      </section>
 
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/HansEngebretsen">HansEngebretsen</a> can be found on <a href="https://github.com/HansEngebretsen/ShowYouID">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
 
-        </section>
-
-        <footer>
-          ShowYouID is maintained by <a href="https://github.com/HansEngebretsen">HansEngebretsen</a><br>
-          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
-        </footer>
-
-        
-      </div>
     </div>
+
+    
   </body>
 </html>
