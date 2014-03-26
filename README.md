@@ -10,7 +10,7 @@ Usage
 
 Click and drag the button below into your bookmarks bar. Then when you're on [the correct page], click it and magic will ensue.
 
-	[SHOW YOUTUBE IDs]
+[SHOW YOUTUBE IDs]
 
 
 
